@@ -5,7 +5,7 @@ import curses
 
 
 screen = curses.initscr()
-curses.noecho() 
+curses.noecho()
 curses.cbreak()
 screen.keypad(True)
 gpio.setmode(gpio.BOARD)
@@ -24,7 +24,6 @@ gpio.setup(right_backward,gpio.OUT)
 
 def forward(time):
     print(f"forward for {time} second")
-    return
     gpio.output(left_forward,True)
     gpio.output(right_forward,True)
     sleep(time)
@@ -34,16 +33,14 @@ def forward(time):
 
 def backward(time):
     print(f"backward for {time} second")
-    return
     gpio.output(left_backward,True)
     gpio.output(right_backward,True)
     sleep(time)
     gpio.output(left_backward,False)
-    gpio.output(right_backward,False)   
+    gpio.output(right_backward,False)
 
 def left(time):
     print(f"left for {time} second")
-    return
     gpio.output(left_backward,True)
     gpio.output(right_forward,True)
     sleep(time)
@@ -53,7 +50,6 @@ def left(time):
 
 def right(time):
     print(f"right for {time} second")
-    return
     gpio.output(left_forward,True)
     gpio.output(right_backward,True)
     time(sleep)
@@ -63,7 +59,7 @@ def right(time):
 try:
     while True:
         char = screen.getch()
-        if char == ord('esc'):
+        if char == ord("q"):
             break
         elif char == curses.KEY_UP:
             forward(1)
