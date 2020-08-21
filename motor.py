@@ -60,19 +60,14 @@ try:
         if char == ord("q"):
             break
         elif char == curses.KEY_UP:
-            forward(1)
-            sleep(1)
+            forward(0.5)
         elif char == curses.KEY_DOWN:
-            backward(1)
-            sleep(1)
+            backward(0.5)
         elif char == curses.KEY_LEFT:
-            left(1)
-            sleep(1)
+            left(0.4)
         elif char == curses.KEY_RIGHT:
-            right(1)
-            sleep(1)
+            right(0.4)
 finally:
-    print("exited")
     curses.nocbreak(); screen.keypad(0); curses.echo()
     curses.endwin()
     gpio.cleanup()
