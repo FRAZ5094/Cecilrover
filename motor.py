@@ -60,17 +60,13 @@ try:
         if char == ord("q"):
             break
         elif char == curses.KEY_UP:
-            forward(1)
-            sleep(0.5)
+            forward(0.5)
         elif char == curses.KEY_DOWN:
-            backward(1)
-            sleep(0.5)
+            backward(0.5)
         elif char == curses.KEY_LEFT:
-            left(1)
-            sleep(0.5)
+            left(0.3)
         elif char == curses.KEY_RIGHT:
-            right(1)
-            sleep(0.5)
+            right(0.3)
 finally:
     print("exited")
     curses.nocbreak(); screen.keypad(0); curses.echo()
