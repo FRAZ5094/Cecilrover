@@ -50,7 +50,7 @@ def right(time):
     print(f"right for {time} second")
     gpio.output(left_forward,True)
     gpio.output(right_backward,True)
-    time(sleep)
+    sleep(time)
     gpio.output(left_forward,False)
     gpio.output(right_backward,False)
 
@@ -64,9 +64,9 @@ try:
         elif char == curses.KEY_DOWN:
             backward(0.5)
         elif char == curses.KEY_LEFT:
-            left(0.3)
+            left(0.4)
         elif char == curses.KEY_RIGHT:
-            right(0.3)
+            right(0.4)
 finally:
     print("exited")
     curses.nocbreak(); screen.keypad(0); curses.echo()
