@@ -61,12 +61,16 @@ try:
             break
         elif char == curses.KEY_UP:
             forward(0.5)
+            sleep(0.5)
         elif char == curses.KEY_DOWN:
             backward(0.5)
+            sleep(0.5)
         elif char == curses.KEY_LEFT:
             left(0.4)
+            sleep(0.4)
         elif char == curses.KEY_RIGHT:
             right(0.4)
+            sleep(0.4)
 finally:
     print("exited")
     curses.nocbreak(); screen.keypad(0); curses.echo()
