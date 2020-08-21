@@ -29,7 +29,6 @@ def forward(time):
     sleep(time)
     gpio.output(left_forward,False)
     gpio.output(right_forward,False)
-    gpio.cleanup()
 
 def backward(time):
     print(f"backward for {time} second")
@@ -46,7 +45,6 @@ def left(time):
     sleep(time)
     gpio.output(left_backward,False)
     gpio.output(right_forward,False)
-    gpio.cleanup()
 
 def right(time):
     print(f"right for {time} second")
@@ -77,3 +75,4 @@ finally:
     print("exited")
     curses.nocbreak(); screen.keypad(0); curses.echo()
     curses.endwin()
+    gpio.cleanup()
