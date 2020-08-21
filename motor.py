@@ -44,10 +44,10 @@ def left(time):
 def right(time):
     print(f"right for {time} second")
     gpio.output(left_forward,True)
-    gpio.output(right_right,True)
+    gpio.output(right_backward,True)
     time(sleep)
     gpio.output(left_forward,False)
-    gpio.output(right_right,False)
+    gpio.output(right_backward,False)
 
 try:
     while True:
