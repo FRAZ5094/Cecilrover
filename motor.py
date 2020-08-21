@@ -54,20 +54,23 @@ def right(time):
     gpio.output(left_forward,False)
     gpio.output(right_backward,False)
 
-try:
-    while True:
-        char = screen.getch()
-        if char == ord("q"):
-            break
-        elif char == curses.KEY_UP:
-            forward(0.5)
-        elif char == curses.KEY_DOWN:
-            backward(0.5)
-        elif char == curses.KEY_LEFT:
-            left(0.4)
-        elif char == curses.KEY_RIGHT:
-            right(0.4)
-finally:
-    curses.nocbreak(); screen.keypad(0); curses.echo()
-    curses.endwin()
-    gpio.cleanup()
+
+
+if "__name__"=="__main__":
+    try:
+        while True:
+            char = screen.getch()
+            if char == ord("q"):
+                break
+            elif char == curses.KEY_UP:
+                forward(0.5)
+            elif char == curses.KEY_DOWN:
+                backward(0.5)
+            elif char == curses.KEY_LEFT:
+                left(0.35)
+            elif char == curses.KEY_RIGHT:
+                right(0.35)
+    finally:
+        curses.nocbreak(); screen.keypad(0); curses.echo()
+        curses.endwin()
+        gpio.cleanup()
