@@ -4,12 +4,8 @@ import keyboard
 import curses
 
 
-screen = curses.initscr()
-curses.noecho()
-curses.cbreak()
-screen.keypad(True)
-gpio.setmode(gpio.BOARD)
 
+gpio.setmode(gpio.BOARD)
 gpio.setwarnings(False)
 
 left_forward=16
@@ -57,6 +53,10 @@ def right(time):
 
 
 if __name__=="__main__":
+    screen = curses.initscr()
+    curses.noecho()
+    curses.cbreak()
+    screen.keypad(True)
     try:
         while True:
             char = screen.getch()
